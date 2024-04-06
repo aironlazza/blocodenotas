@@ -3,19 +3,23 @@
   padding:0;
 }
   
-header{
-  border-bottom: 1px solid #1b85dc;
-  height: 10vh;
+#header{
+  background: linear-gradient(90deg, rgba(247,190,144,1) 0%, rgba(214,183,210,1) 100%);
 }
 
-#div-logo{
-  width: 30vw;
-  height: 10vh;
+#nome{
+  letter-spacing: 2px;
 }
 
 #logo-img{
-  height: 8vh;
+  height: 15vh;
+  position: absolute;
 }
+#linha{
+  background-color: #BADBDD
+}
+
+
 #display{
   width: 50vw;
 }

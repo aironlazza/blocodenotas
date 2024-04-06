@@ -10,7 +10,7 @@ const btnCloseNote = document.querySelector("#btn-close-note");//icone para fech
 
 
 const edit = document.querySelector("#edit");
-const delet = document.querySelector("#delet");
+const delet = document.querySelector("#delete");
 
 //Eventos
 
