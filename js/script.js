@@ -3,11 +3,10 @@ let notesContainer = document.getElementById("notes-container");
 let modal = document.getElementById("modal");
 let createButton = document.getElementById("create-button")
 let saveButton = document.getElementById("save-button");
-let notesArray;
+let notesArray = [];
 let modalTitle = document.getElementById("modal-title");
 let modalText = document.getElementById("modal-text");
 // notes -> col -> card
-placeholder.style.display = "none";
 let color = "rgb(230, 238, 251)";
 // console.log()
 
@@ -47,17 +46,20 @@ if(modal){
     
 }
 
+
 function retrieveNotes(){
-    if(!localStorage.getItem("notes")){
-        console.log("nao achei o array, vou criar");
-        notesArray = [];
-    }
-    else{
+    if(localStorage.getItem("notes")){
         notesArray = localStorage.getItem("notes");
         notesArray = JSON.parse(notesArray);
         showNotes();
     }
-    console.log(notesArray);
+    if(notesArray.length==0){
+        placeholder.style.display = "block";
+    }
+    else{
+        placeholder.style.display = "none";
+    }
+    console.log(notesArray)
 
 }
 
