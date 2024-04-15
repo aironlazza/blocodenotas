@@ -5,79 +5,89 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <title>Bloco de Notas</title>
     </head>
     <body>
-         <div class="container-fluid p-0">
-            <div class="row h-100" id="header">
+      
+         <div class="container-fluid h-100" id="container">
+            <div class="row" id="header">
                <div id="div-logo" class="col-3 ">
-                  <img src="img/notepad.png" id="logo-img" class="mt-3 ms-3">
+                  <img src="img/notepad.png" id="logo-img" class="mt-1 mb-1">
                </div>
                <div class="col-6 d-flex align-items-center justify-content-center" id="header-div">
                   <h1 class="text-center mb-0 text-white fw-bold p-3" id="nome">BLOCO DE NOTAS</h1>
                </div>
             </div> 
-            <div class="row justify-content-center" id="linha">
-               <div class="col-11">
-                  <div id="controls">
-                     <div id="add-note">
-                        <a href="" class="d-flex align-items-center justify-content-center text-decoration-none">
-                           <h4 class="mb-0 text-center me-2">CLIQUE AQUI PARA ADICIONAR UMA NOVA NOTA</h4>
-                           <i class="bi bi-plus-square-fill" style="font-size: 2rem;"></i>
-                        </a>
-                     </div>
+            <div class="row justify-content-center mb-4" id="linha">
+               <div class="col-11 d-flex justify-content-center">
+                  <div id="create-note" data-bs-whatever="create" data-bs-toggle="modal" data-bs-target="#modal" >
+                     <a href="#" class="d-flex align-items-center justify-content-center text-decoration-none">
+                        <h4 class="mb-0 text-center me-2">CLIQUE AQUI PARA ADICIONAR UMA NOVA NOTA</h4>
+                        <i class="bi bi-plus-square-fill fs-1" ></i>
+                     </a>
                   </div>
                </div>
             </div>
+            <div id="notes-container" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 mx-3 ">
+               <!-- <div class="col pb-3">
+                  <div class="card ">
+                     <div class="card-body">
+                       <h5 class="card-title">Card title</h5>
+                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     </div>
+                     <div class="card-body p-0">
+                        <p class="border m-0 px-3 py-2 border-second-subtle">Última edição: 14/04/2024</p>
+                     </div>
+                     <div class="card-body d-flex justify-content-between px-3 pt-0 pb-3">
+                       <a type="button" class="card-link link-dark icon-link icon-link-hover"><i class="bi bi-trash3-fill fs-3"></i></a>
+                       <a type="button" class="card-link link-dark icon-link icon-link-hover"><i class="bi bi-pencil-square fs-3"></i></a>
+                     </div>
+                   </div>
+               </div> -->
+            </div>
+            <div id="modal" class="modal fade">
+               <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5">Nova nota</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-2">
+                          <label for="modal-title" class="col-form-label">Título:</label>
+                          <input type="text" class="form-control" id="modal-title">
+                        </div>
+                        <div class="mb-2">
+                          <label for="modal-text" class="col-form-label">Texto:</label>
+                          <textarea class="form-control" id="modal-text"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                     <div class="col d-flex align-items-center justify-content-evenly" id="color-bar">
+                        <p class="m-0 h4">Cor:</p>
+                        <i class="bi bi-square-fill color fs-3 rounded-2" role="button" id="#E6EEFB" style="color: #E6EEFB; background-color: rgba(13, 110, 253, 0.25);"></i>
+                        <i class="bi bi-square-fill color fs-3 rounded-2" role="button" id="#FFADC3" style="color: #FFADC3;"></i>
+                        <i class="bi bi-square-fill color fs-3 rounded-2" role="button" id="#01D6F6" style="color: #01D6F6;"></i>
+                        <i class="bi bi-square-fill color fs-3 rounded-2" role="button" id="#FEBA99" style="color: #FEBA99;"></i>
+                        <i class="bi bi-square-fill color fs-3 rounded-2" role="button" id="#CAF064" style="color: #CAF064;"></i>
+                     </div>
+                     
+                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save-button">Salvar e Fechar</button>
+                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="create-button">Criar Nota</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="m-auto" id="placeholder">
+               <h3 class="text-center text-secondary fw-light">NÃO HÁ NADA AQUI. ADICIONE UMA NOTA PARA COMEÇAR.</h3>
+            </div>
          </div>
-        <msgs></msgs>
-        <main>
-            <div id="notes"> 
-
-            </div>
-   
-            <div id="modal-view">
-               <div id="close-modal">
-                  <a href="" >
-                     <i class="bi bi-x-square" ></i>
-               </a>
-            </div>
-            <div id="title-note"> </div>
-            <div id="content-note"> </div>
-            <div id="controls-note">
-                  <i class="bi bi-trash3-fill" id="delete" style="color:#0d6efd; font-size: 1.5rem"></i> 
-                  <i class="bi bi-pencil" id="edit" style="color:#0d6efd; font-size: 1.5rem"></i>
-            </div>
-         </div>
-   
-         <div id="modal">
-            <div class="mb-3" style="border-bottom: 1px solid #999; display:flex; justify-content: space-between;">
-               <div>
-                  <a href="" id="btn-save-note">
-                     <i class="bi bi-save" ></i>
-                  </a>
-               </div>
-            <div>
-               <a href="" style="color:#999" id="btn-close-note">
-                  <i class="bi bi-x-square" ></i>
-               </a>
-            </div>
-            </div>
-            <input type="hidden" id="input-id" >
-            <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="input-title" placeholder="Title">
-            </div>
-            <div class="mb-3">
-            <label for="content" class="form-label">Notes</label>
-            <textarea class="form-control" id="input-content" rows="4"></textarea>
-            </div>
-   
-         </div>
-      </main>  
-      <footer> </footer>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+         
+         
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>         
       <script src="js/script.js"></script>
    </body>
 </html>

@@ -1,8 +1,10 @@
-*{
-  margin:0;
-  padding:0;
+html,body {
+  height: 100%;
 }
-  
+#container{
+  display: flex;
+  flex-direction: column;
+}
 #header{
   background: linear-gradient(90deg, rgba(247,190,144,1) 0%, rgba(214,183,210,1) 100%);
 }
@@ -12,59 +14,21 @@
 }
 
 #logo-img{
-  height: 15vh;
-  position: absolute;
+  height: 12vh;
 }
 #linha{
   background-color: #BADBDD
 }
-
-
-#display{
-  width: 50vw;
+.bi:hover{
+  filter: brightness(0.8)
+}
+.color{
+  padding: 0 .375rem;
+}
+.card{
+  --bs-border-color: rgba(0, 0, 0, .125) !important;
 }
 
-#user{
-  width: 20vw;
-}
-
-main{
-  margin: 2vh 2vw;
-  min-height: 80vh;
-}
-
-#notes{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.card a{
-  text-decoration: none;
-}
-
-#modal-view{
-  border:1px solid #1b85dc;
-  position: absolute;
-  display:none;
-  width: 90vw;
-  padding:10px;
-  
-}
-
-#close-modal{
-  float:right;
-}
-
-#modal{
-  border:1px solid #1b85dc;
-  position: absolute;
-  padding:2vh 2vw;
-  display:none;
-  width: 90vw;
-}
-
-#controls-note{
-  display:flex;
-  gap:10px;
+.icon-link-hover{
+  --bs-icon-link-transform: translate3d(0, -.125rem, 0);
 }
